@@ -67,3 +67,7 @@ front/vite-project/.stylelintcache
 front/vite-project/.parcel-cache
 front/vite-project/.cache/
 front/vite-project/.temp/
+
+# Root Environment Variables & Security (CRITICAL)
+.env
+.env.local
