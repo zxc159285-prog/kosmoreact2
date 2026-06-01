@@ -17,7 +17,6 @@ public class NoticeController {
 
     @GetMapping
     public List<NoticeDTO> list() throws Exception {
-        System.out.println("main branch");
         return noticeService.getList();
     }
 
