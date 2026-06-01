@@ -43,5 +43,27 @@ out/
 ### React Frontend ###
 front/vite-project/node_modules/
 front/vite-project/dist/
+front/vite-project/build/
+front/vite-project/coverage/
+
+# React Environment Variables & Security (CRITICAL)
+front/vite-project/.env
 front/vite-project/.env.local
-front/vite-project/.env.*.local
+front/vite-project/.env.development.local
+front/vite-project/.env.test.local
+front/vite-project/.env.production.local
+front/vite-project/.env.staging.local
+front/vite-project/.env.local.local
+
+# Debug logs
+front/vite-project/npm-debug.log*
+front/vite-project/yarn-debug.log*
+front/vite-project/yarn-error.log*
+front/vite-project/pnpm-debug.log*
+
+# Editor & Linter cache
+front/vite-project/.eslintcache
+front/vite-project/.stylelintcache
+front/vite-project/.parcel-cache
+front/vite-project/.cache/
+front/vite-project/.temp/
