@@ -17,6 +17,7 @@ public class NoticeController {
 
     @GetMapping
     public List<NoticeDTO> list() throws Exception {
+        System.out.println("깃허브 연동");
         return noticeService.getList();
     }
 
