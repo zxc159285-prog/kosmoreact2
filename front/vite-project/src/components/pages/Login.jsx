@@ -37,8 +37,8 @@ function Login({ user, setUser }) {
         return r.json();
       })
       .then((data) => {
-        localStorage.setItem("refresh-token",data.refreshToken)
-        sessionStorage.setItem("access-token",data.accessToken)
+        localStorage.setItem("refreshToken",data.refreshToken)
+        sessionStorage.setItem("accessToken",data.accessToken)
         const sessionData = {
           username: data.username,
           name: data.name,
