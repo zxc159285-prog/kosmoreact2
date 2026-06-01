@@ -1,0 +1,232 @@
+/* 베이커리 스타일이 통합된 공지사항 목록 CSS (list.css) */
+.notice-container {
+  max-width: 1000px;
+  width: 90%;
+  margin: 60px auto;
+  padding: 40px;
+  background: var(--bakery-card-bg);
+  border-radius: var(--bakery-radius);
+  box-shadow: var(--bakery-shadow);
+  border: 1px solid var(--bakery-border);
+  text-align: left;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  border-bottom: 2px solid var(--bakery-border);
+  padding-bottom: 16px;
+}
+
+.notice-title-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notice-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--bakery-text);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.notice-count {
+  font-size: 14px;
+  background: var(--bakery-secondary);
+  color: var(--bakery-primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--bakery-secondary-border);
+  font-weight: 600;
+}
+
+.notice-table-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--bakery-border);
+  box-shadow: 0 4px 6px -1px rgba(78, 61, 48, 0.05);
+}
+
+.notice-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+  background: var(--bakery-card-bg);
+}
+
+.notice-table th {
+  background: #FCFAF7;
+  color: var(--bakery-text);
+  font-weight: 700;
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 2px solid var(--bakery-border);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.notice-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--bakery-border);
+  color: var(--bakery-text);
+  transition: all 0.2s ease;
+}
+
+.notice-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.notice-row:hover {
+  background-color: var(--bakery-secondary);
+}
+
+.notice-row:hover td {
+  color: var(--bakery-primary);
+}
+
+.notice-row.active {
+  background-color: var(--bakery-secondary);
+}
+
+.notice-row.active td {
+  color: var(--bakery-primary);
+  font-weight: 700;
+}
+
+.col-id {
+  width: 80px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--bakery-primary);
+}
+
+.col-title {
+  font-weight: 600;
+}
+
+.col-author {
+  width: 140px;
+  color: var(--bakery-text-muted);
+}
+
+.col-date {
+  width: 180px;
+  font-size: 13.5px;
+  color: var(--bakery-text-muted);
+  white-space: nowrap;
+}
+
+/* Detail expanded row */
+.detail-row td {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--bakery-border);
+  background-color: #FCFAF7;
+}
+
+.detail-content {
+  padding: 24px;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+.detail-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--bakery-text);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--bakery-text-muted);
+  border-top: 1px dashed var(--bakery-border);
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+.meta-item strong {
+  color: var(--bakery-text);
+}
+
+/* Loading & Empty status */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  color: var(--bakery-text-muted);
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--bakery-secondary);
+  border-top-color: var(--bakery-primary);
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empty-container {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--bakery-text-muted);
+}
+
+.empty-icon {
+  font-size: 54px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.empty-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bakery-text);
+  margin-bottom: 8px;
+}
+
+.empty-subtext {
+  font-size: 14px;
+  opacity: 0.8;
+}

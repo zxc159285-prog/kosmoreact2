@@ -1,0 +1,187 @@
+/* 하루식빵 글로벌 베이커리 테마 스타일 정의 (bakery.css) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* 색상 토큰 */
+  --bakery-bg: #FAF7F2;          /* 따뜻한 우유 크림빛 배경색 */
+  --bakery-card-bg: #FFFFFF;     /* 카드 및 모달용 순백색 */
+  --bakery-primary: #D48C45;     /* 노릇노릇 잘 구워진 식빵 크러스트 골드 */
+  --bakery-primary-hover: #B9742E;
+  --bakery-secondary: #FFF5E3;   /* 부드러운 유기농 버터색 */
+  --bakery-secondary-border: #F3DFBE;
+  --bakery-text: #4E3D30;        /* 묵직한 다크 초콜릿/로스팅 원두색 */
+  --bakery-text-muted: #8E7A6E;  /* 음영 텍스트 */
+  --bakery-border: #EFE4D6;      /* 밀가루 반죽 느낌의 연한 브라운 테두리 */
+  --bakery-accent: #E05A47;      /* 새콤달콤한 딸기잼 레드 */
+  --bakery-dark-accent: #2C1A16; /* 딥 에스프레소 푸터용 배경 */
+  --bakery-shadow: 0 10px 30px rgba(78, 61, 48, 0.05), 0 1px 3px rgba(78, 61, 48, 0.02);
+  --bakery-shadow-hover: 0 20px 40px rgba(78, 61, 48, 0.12);
+  --bakery-radius: 16px;
+  --bakery-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: var(--bakery-bg);
+  color: var(--bakery-text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* 폰트 계층 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--bakery-text);
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', 'Noto Sans KR', serif;
+}
+
+/* 기본 공통 레이아웃 */
+.bakery-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+/* 카드 공통 */
+.bakery-card {
+  background-color: var(--bakery-card-bg);
+  border: 1px solid var(--bakery-border);
+  border-radius: var(--bakery-radius);
+  box-shadow: var(--bakery-shadow);
+  transition: var(--bakery-transition);
+  overflow: hidden;
+}
+
+.bakery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--bakery-shadow-hover);
+  border-color: var(--bakery-secondary-border);
+}
+
+/* 버튼 공통 */
+.bakery-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 30px;
+  transition: var(--bakery-transition);
+  cursor: pointer;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.bakery-btn-primary {
+  background-color: var(--bakery-primary);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 4px 14px rgba(212, 140, 69, 0.3);
+}
+
+.bakery-btn-primary:hover {
+  background-color: var(--bakery-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 140, 69, 0.4);
+}
+
+.bakery-btn-secondary {
+  background-color: var(--bakery-secondary);
+  color: var(--bakery-primary);
+  border: 1px solid var(--bakery-secondary-border);
+}
+
+.bakery-btn-secondary:hover {
+  background-color: #FFF0D1;
+  transform: translateY(-2px);
+}
+
+.bakery-btn-outline {
+  background-color: transparent;
+  color: var(--bakery-text);
+  border: 1px solid var(--bakery-border);
+}
+
+.bakery-btn-outline:hover {
+  background-color: rgba(78, 61, 48, 0.05);
+  border-color: var(--bakery-text-muted);
+}
+
+/* 배지 스타일 */
+.bakery-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.bakery-badge-primary {
+  background-color: var(--bakery-secondary);
+  color: var(--bakery-primary);
+  border: 1px solid var(--bakery-secondary-border);
+}
+
+.bakery-badge-accent {
+  background-color: #FFEAEA;
+  color: var(--bakery-accent);
+  border: 1px solid #FFCDCD;
+}
+
+/* 폼 스타일 */
+.bakery-input-group {
+  margin-bottom: 20px;
+}
+
+.bakery-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--bakery-text);
+}
+
+.bakery-input {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--bakery-border);
+  background-color: #FCFAF7;
+  color: var(--bakery-text);
+  transition: var(--bakery-transition);
+  box-sizing: border-box;
+}
+
+.bakery-input:focus {
+  outline: none;
+  border-color: var(--bakery-primary);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(212, 140, 69, 0.1);
+}
+
+/* 스크롤바 커스텀 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bakery-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bakery-border);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bakery-primary-hover);
+}
